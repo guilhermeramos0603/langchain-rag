@@ -1,0 +1,62 @@
+[
+  {
+    "id": "py_off_by_one",
+    "language": "python",
+    "code": "def get_item(lst, idx):\n    return lst[idx + 1]",
+    "expected_bug": "off-by-one error"
+  },
+  {
+    "id": "py_mutable_default",
+    "language": "python",
+    "code": "def add_item(item, items=[]):\n    items.append(item)\n    return items",
+    "expected_bug": "mutable default argument"
+  },
+  {
+    "id": "py_none_return",
+    "language": "python",
+    "code": "def calculate_sum(numbers):\n    total = 0\n    for n in numbers:\n        total += n",
+    "expected_bug": "missing return statement"
+  },
+  {
+    "id": "py_string_concat",
+    "language": "python",
+    "code": "def format_score(name, score):\n    return name + \" scored \" + score + \" points\"",
+    "expected_bug": "type error: string + int concatenation"
+  },
+  {
+    "id": "py_shallow_copy",
+    "language": "python",
+    "code": "def duplicate_matrix(matrix):\n    return matrix[:]",
+    "expected_bug": "shallow copy of nested list"
+  },
+  {
+    "id": "js_no_await",
+    "language": "javascript",
+    "code": "async function getUser(id) {\n  const response = fetch(`/api/users/${id}`);\n  return response.json();\n}",
+    "expected_bug": "missing await on fetch"
+  },
+  {
+    "id": "js_loose_equality",
+    "language": "javascript",
+    "code": "function isEmpty(value) {\n  if (value == false) {\n    return true;\n  }\n  return false;\n}",
+    "expected_bug": "loose equality with type coercion"
+  },
+  {
+    "id": "js_sort_numeric",
+    "language": "javascript",
+    "code": "function sortNumbers(arr) {\n  return arr.sort();\n}",
+    "expected_bug": "sort without numeric comparator"
+  },
+  {
+    "id": "sql_injection",
+    "language": "python",
+    "code": "def find_user(cursor, username):\n    query = f\"SELECT * FROM users WHERE name = '{username}'\"\n    cursor.execute(query)\n    return cursor.fetchone()",
+    "expected_bug": "SQL injection vulnerability"
+  },
+  {
+    "id": "py_infinite_loop",
+    "language": "python",
+    "code": "def countdown(n):\n    while n > 0:\n        print(n)\n    return 'done'",
+    "expected_bug": "infinite loop: n is never decremented"
+  }
+]

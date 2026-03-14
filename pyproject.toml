@@ -1,0 +1,19 @@
+[project]
+name = "ai-debug-battle"
+version = "0.1.0"
+description = "AI Debug Assistant — LangGraph + RAG implementation"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "python-dotenv",
+    "pydantic",
+    "openai",
+    "langchain-openai",
+    "langgraph",
+    "langchain",
+    "chromadb",
+    "sentence-transformers",
+    "httpx",
+    "pytest",
+]
